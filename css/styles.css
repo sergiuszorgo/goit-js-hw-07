@@ -6,5 +6,19 @@ body {
 
 .gallery {
   display: flex;
+  justify-content: space-around;
   list-style: none;
+  background-color: #bbbbbb;
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
 }

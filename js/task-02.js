@@ -16,4 +16,3 @@ const createList = ingredient => {
   return listIngredients;
 }
 const itemList = ingredients.map(ingredient => createList(ingredient));
-console.log(createList(ingredients));

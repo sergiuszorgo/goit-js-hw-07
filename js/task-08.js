@@ -18,8 +18,8 @@ function destroyBoxes(){
 function createDiv(id,numb,b=0){
     for(let i=1;i<numb+1;i+=1){
         let div=document.createElement('div');
-        div.style.width=(i+b)10+"px";
-        div.style.height=(i+b)10+"px";
+        div.style.width=(i+b)+10+"px";
+        div.style.height=(i+b)+10+"px";
         div.style.backgroundColor='#' + ( Math.random() * 0xFFFFF0 << 0 ).toString(16);
         id.append(div);
     }

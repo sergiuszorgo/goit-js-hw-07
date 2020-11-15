@@ -21,7 +21,7 @@ gallery.classList.add("gallery");
 const imagesList = images.forEach(({ url, alt }) => {
     return gallery.insertAdjacentHTML('beforeend', `<li><img src='${url}' alt = '${alt}' width='350' height ='250' /></li>`)
 });
-console.log(gallery);
+// console.log(gallery);
 
 // Вариант с for
 // let gallery = document.getElementById('gallery');
