@@ -18,24 +18,12 @@ const images = [
 
 const gallery = document.querySelector('#gallery');
 gallery.classList.add("gallery");
-const imagesList = images.forEach(({ url, alt }) => {
-    return gallery.insertAdjacentHTML('beforeend', `<li><img src='${url}' alt = '${alt}' width='350' height ='250' /></li>`)
-});
-// console.log(gallery);
+// const imagesList = images.forEach(({ url, alt }) => {
+//     return gallery.insertAdjacentHTML('beforeend', `<li><img src='${url}' alt = '${alt}' width='350' height ='250' /></li>`)
+// });
+// // console.log(gallery);
 
-// Вариант с for
-// let gallery = document.getElementById('gallery');
-// let createGallery=function(arr,id){
-//     for(let i=0;i<arr.length;i+=1){
-//         let str='<li><img src=""></li>';
-//         id.insertAdjacentHTML('afterbegin',str);
-//         let li=id.querySelector('li');
-//         let img=id.querySelector('img');
-//         li.classList.add('lili');
-//         img.classList.add('fff');
-//         img.setAttribute('src',arr[i].url);
-//         img.setAttribute('alt',arr[i].alt);
-//     }
-// }
-// createGallery(images,gallery);
+// Переделал - без forEach, теперь массив со всеми li добавляется за одну операцию innerHTML
 
+const imagesList = images.reduce((string, {url, alt}) => string + `<li><img src='${url}'alt = '${alt}' width='350' height ='250' /></li>`, "");
+gallery.innerHTML = imagesList;
