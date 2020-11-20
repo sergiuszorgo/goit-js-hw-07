@@ -9,6 +9,8 @@ const ingredients = [
 
 const listIngredients = document.querySelector('#ingredients');
 
+// =====!!! Не ясен отказ в приёме этого варианта ??
+
 // const createList = ingredient => {
 //   const item = document.createElement('li');
 //   item.textContent = ingredient;
@@ -17,8 +19,17 @@ const listIngredients = document.querySelector('#ingredients');
 // }
 // const itemList = ingredients.map(ingredient => createList(ingredient));
 
-// Переделал - теперь массив со всеми li добавляется за одну операцию innerHTML
+// =====!!!Переделал - теперь массив со всеми li добавляется за одну операцию innerHTML
 
-const createList = ingredients.reduce((string, item) => string + `<li>${item}</li>`, "");
+// const createList = ingredients.reduce((string, item) => string + `<li>${item}</li>`, "");
+// listIngredients.innerHTML = createList;
 
-listIngredients.innerHTML = createList;
+// =====!!!Поправочка - надо было использовать createElement
+
+const ingredientItems = [];
+ingredients.map(element => {
+  let liItem = document.createElement('li');
+  liItem.textContent = element;
+  ingredientItems.push(liItem);
+})
+listIngredients.append(...ingredientItems);
