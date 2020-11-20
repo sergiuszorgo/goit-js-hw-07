@@ -5,7 +5,7 @@ const inputValid = document.querySelector('#validation-input');
 //         inputValid.classList.add("valid") : inputValid.classList.add("invalid")
 // });
 
-// Сделал как просили без тернарного
+// ===!!! Сделал как просили без тернарного
 
 inputValid.addEventListener('blur', () => {
     if (inputValid.value.length === Number(inputValid.getAttribute("data-length"))) {
